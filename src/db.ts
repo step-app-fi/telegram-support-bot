@@ -1,5 +1,5 @@
 const Database = require('better-sqlite3');
-const db = new Database('./config/support.db', {
+const db = new Database(process.env.DATABASE_PATH || './config/support.db', {
   /* verbose: console.log */
 }); // debugging
 

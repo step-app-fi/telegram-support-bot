@@ -1,4 +1,4 @@
-import { Cache, Config } from './interfaces';
+import {Cache, Config} from './interfaces';
 import TelegramAddon from './addons/telegram';
 import * as YAML from 'yaml';
 import * as fs from 'fs';
@@ -17,7 +17,7 @@ const cache: Cache = {
 };
 
 cache.config = YAML.parse(
-  fs.readFileSync('./config/config.yaml', 'utf8'),
+    fs.readFileSync(process.env.CONFIG_PATH || './config/config.yaml', 'utf8'),
 );
 
 export default cache;
